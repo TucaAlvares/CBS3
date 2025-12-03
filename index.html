@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load JSON from GitHub</title>
+</head>
+<body>
+    <h1>JSON Data from GitHub</h1>
+    <div id="output"></div>
+
+    <script>
+        const url = "https://raw.githubusercontent.com/TucaAlvares/CBS3/refs/heads/main/CBS3_Final.json";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("output").innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error("Error loading JSON:", error));
+    </script>
+</body>
+</html>
